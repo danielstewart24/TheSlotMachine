@@ -1,7 +1,6 @@
 body {
     background-image: url('assets/casino-interior.jpeg');
     background-size: cover;
-
 }
 
 .message-board {
@@ -72,7 +71,6 @@ body {
     border-radius: 50%;
     background: rgb(0, 113, 128);
     border: 3px dotted yellow;
-
 }
 
 .push-button:hover {
@@ -117,7 +115,6 @@ body {
     display: flex;
     flex-direction: column-reverse;
     width: 10%;
-
 }
 
 input[type="radio"] {
@@ -129,7 +126,6 @@ input[type="radio"] {
 
 label {
     font-size: 25px;
-
 }
 
 table {

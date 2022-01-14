@@ -1,5 +1,5 @@
 
-var handlePulls = 0
+var betsMade = 0
 var initialFunds = 2000;
 var walletAmount = initialFunds;
 var winningsAmount = 0;
@@ -23,17 +23,15 @@ function displayKeepGoing() {
 }
 
 function displayGameOverMessage() {
-   let gameOverMessage = document.querySelector(".cash-out-message") 
+  //Display this message saying your money has been deposited
+    let gameOverMessage = document.querySelector(".cash-out-message") 
     gameOverMessage.innerHTML = "$" + winningsAmount + " has been deposited! Thanks for playing Slot Machine!"
-    setTimeout(() => {gameOverMessage.innerHTML = "" }, 2000)
-}
-
-
-function displayInitialWalletAmount() {
-    document.getElementById("wallet").innerHTML = initialFunds;
+    setTimeout(() => {gameOverMessage.innerHTML = "" }, 3000)
 }
 
 function displayWalletAmount() {
+    //Display initial wallet amount, and after every bet. Stop game and
+    // reset when $ amount reaches 0
         document.getElementById("wallet").innerHTML = "Wallet: $" + walletAmount;
         if (walletAmount < 1) {stopGame()}
 }
@@ -45,11 +43,10 @@ function displayWinnings() {
     document.getElementById("winnings").innerHTML = "You've collected $" + winningsAmount   
 }
 
-function displayHandlePulls() {
+function displayBetsMade() {
     // Beginning with 0, display a number increasing in the amount
     // of one for each handle pull
-    document.getElementById("handlePullDisplay").innerHTML = "BETS: " + handlePulls;
-
+    document.getElementById("handlePullDisplay").innerHTML = "BETS: " + betsMade;
 }
 
 function countOccurrences(arr, val){ 
@@ -74,41 +71,40 @@ function compareNums (numArray,betAmount) {
 }
 
 function pullHandle() {
+    //Game will begin here and randomize table while calling many
+    //functions that will be updated on each push of the button
     var firstNum = Math.floor(Math.random() * 5);
     var secondNum = Math.floor(Math.random() * 5);
     var thirdNum = Math.floor(Math.random() * 5);
     var fourthNum = Math.floor(Math.random() * 5);  
     let numArray = [firstNum,secondNum,thirdNum,fourthNum]
-    handlePulls = handlePulls + 1 
-    displayHandlePullResults(firstNum, secondNum,thirdNum,fourthNum)
-    displayHandlePulls()
+    betsMade = betsMade + 1 
+    displayPushResults(firstNum, secondNum,thirdNum,fourthNum)
+    displayBetsMade()
     var betAmount = chooseDollarAmount()
     walletAmount = walletAmount - betAmount
     let currentWinnings = compareNums(numArray,betAmount)
     winningsAmount = winningsAmount + currentWinnings
     displayWalletAmount()
     displayWinnings()
-    console.log(handlePulls)
 }
 
-function resetHandlePull() {
-   handlePulls = 0
-   displayHandlePulls()
-}
-
-function displayHandlePullResults(firstNum, secondNum,thirdNum,fourthNum) { 
+function displayPushResults(firstNum, secondNum,thirdNum,fourthNum) { 
     document.getElementById("table-1").innerHTML = firstNum;
     document.getElementById("table-2").innerHTML = secondNum;
     document.getElementById("table-3").innerHTML = thirdNum;
     document.getElementById("table-4").innerHTML = fourthNum;
-    console.log(firstNum, secondNum, thirdNum, fourthNum)
+}
+function resetBetsMadeDisplay() {
+    //Display 0 for Bets made
+   betsMade = 0
+   displayBetsMade()
 }
 
 function resetWinningsDisplay() {
     //Display winnings in div/window under the results table
     winningsAmount = 0
     displayWinnings()
-
 }
 
 function resetWalletAmountDisplay(){
@@ -118,11 +114,11 @@ function resetWalletAmountDisplay(){
 
 function cashOut() {
     //Reset entire game and display an alert with user's winnings
-    displayHandlePullResults(0, 0, 0, 0)
-    resetHandlePull()
+    displayGameOverMessage()
+    displayPushResults(0, 0, 0, 0)
+    resetBetsMadeDisplay()
     resetWalletAmountDisplay()
     resetWinningsDisplay()
-    displayGameOverMessage()
 }
 
 function chooseDollarAmount() {
@@ -132,19 +128,19 @@ function chooseDollarAmount() {
             return radioArrayAmounts[i].value
         }
     }
-    console.log()
 }
+
 function stopGame() {
     cashOut()
 }
 
 function startGame() {
     // start game upon browser initiation    
-    displayHandlePullResults(0, 0, 0, 0)
-    resetHandlePull()
+    displayPushResults(0, 0, 0, 0)
+    resetBetsMadeDisplay()
     resetWalletAmountDisplay()
     resetWinningsDisplay()
 }
 
 startGame()
-
+// will call the startGame function upon page load
