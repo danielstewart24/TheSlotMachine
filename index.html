@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Slot Machine Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="game-container">
+        <div class="message-board">
+            <div class="title">Let's Play = SLOT MACHINE!</div>
+            <div class="winner-message"></div>
+            <div class="loser-message"></div>    
+        </div>
+
+        <div class='game-background'>
+            <div id="wrapper2">                
+                <div id="wallet" class="wallet-message-box"></div>
+                <div class="push-button" onclick="pullHandle()"><h1>PUSH</h1></div>
+                <div id="handlePullDisplay" class="attempts-message-box" onclick="displayHandlePulls()">ATTEMPTS</div>
+            </div>
+            
+            <div class="wrapper">
+                <div id="radioButtons"class="bet-radio">
+                    <div>
+                        <input type="radio" id="1" value ="1" name="money">
+                        <label for="one-dollar">$1</label>
+                    </div>
+                    
+                    <div> 
+                    <input type="radio" id="5"  value ="5" name="money">
+                    <label for="five-dollar">$5</label>
+                    </div>
+                    
+                    <div> 
+                        <input type="radio" id="10" value ="10" name="money">
+                        <label for="ten-dollar">$10</label>
+                    </div>
+
+                    <div> 
+                        <input type="radio" id="20" value ="20" name="money">
+                        <label for="twenty-dollar">$20</label>
+                    </div>
+                    
+                    <div> 
+                        <input type="radio" id="50" value ="50" name="money">
+                        <label for="fifty-dollar">$50</label>
+                    </div>
+                    
+                    <div> 
+                        <input type="radio" id="100" value ="100" name="money" checked="checked">
+                        <label for="hundred-dollar">$100</label>
+                    </div>
+                </div>
+                
+                <table id="table">
+                    <tr>
+                        <td id="table-1">0</td>
+                        <td id="table-2">0</td>
+                        <td id="table-3">0</td>
+                        <td id="table-4">0</td>
+                    </tr>
+                </table>
+            </div>
+                <div id="winnings" class="winnings-message-box">MY WINNINGS</div>
+                <div id="cashOut"class="cash-out" onclick="cashOut()">Cash Out HERE! </div>
+        </div>
+    </div>
+    <script src="slotMachine.js"></script>
+</body>

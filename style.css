@@ -1,0 +1,177 @@
+body {
+    background-image: url('assets/casino-interior.jpeg');
+    background-size: cover;
+
+}
+
+.message-board {
+    min-width: 700px;
+    max-width: 700px;
+    background: rgba(108, 209, 162, 0.9);
+    width: 75%;
+    margin: 0 auto;
+    height: 200px;
+    padding: 20px 0;
+    border-radius: 20px;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 45px;
+    text-align: center;
+    color:rgb(250, 238, 223)
+    
+}
+
+.winner-message {
+
+    text-align: center;
+    color:purple;
+    font-weight: bold;
+    font-size: 80px;
+}
+
+.loser-message {
+    text-align: center;
+    color: blue;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.game-container {
+    height: 100%;
+    width: 95%;
+    margin: 40px auto;
+}
+
+.game-background {
+    min-width: 700px;
+    max-width: 700px;
+    background: rgb(212, 201, 201);
+    width: 75%;
+    height: 60%;
+    padding: 50px 50px;
+    margin: 10px auto;
+    z-index: -1;
+    border-radius: 5%;
+}
+#wrapper2 {
+   display: flex;
+}
+.push-button {
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    margin: 0px auto;
+    padding: 20px;
+    border-radius: 50%;
+    background: rgb(0, 113, 128);
+    border: 3px dotted yellow;
+
+}
+
+.push-button:hover {
+    background: rgb(52, 143, 155);
+    color: white;
+}
+
+.wallet-message-box {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    margin-left: 0%;
+    padding: 10px;
+    border-radius: 50%;
+    background: rgb(0, 113, 128);
+}
+
+.attempts-message-box {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    padding: 20px;
+    border-radius: 50%;
+    background: rgb(0, 113, 128);
+}
+
+.wrapper {
+    display: flex;
+    margin-top: 60px;
+}
+
+.bet-radio {
+    min-width: 85px;
+    display: flex;
+    flex-direction: column-reverse;
+    width: 10%;
+
+}
+
+input[type="radio"] {
+    display: vertical;
+    vertical-align: middle;
+    width: 1rem;
+    height: 2rem;
+}
+
+label {
+    font-size: 25px;
+
+}
+
+table {
+    width: 50%;
+    height: 50%;
+    margin: 0px 50px auto 120px;
+}
+
+td {
+    font-size: 50px;
+}
+
+.winnings-message-box {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10%;
+    background: rgb(0, 113, 128);
+}
+
+.cash-out:hover {
+    background: rgb(52, 143, 155);
+    color: white;
+}
+
+.cash-out {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6rem;
+    margin-left: 85%;
+    margin-top: 0%;
+    padding: 20px;
+    border-radius: 50%;
+    background: rgb(0, 113, 128);
+    border: 3px solid white;
+}
