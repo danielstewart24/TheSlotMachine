@@ -19,14 +19,13 @@ body {
     font-weight: bold;
     font-size: 45px;
     text-align: center;
-    color:rgb(250, 238, 223)
-    
+    color: rgb(250, 238, 223)
 }
 
 .winner-message {
 
     text-align: center;
-    color:purple;
+    color: purple;
     font-weight: bold;
     font-size: 80px;
 }
@@ -55,9 +54,11 @@ body {
     z-index: -1;
     border-radius: 5%;
 }
+
 #wrapper2 {
-   display: flex;
+    display: flex;
 }
+
 .push-button {
     text-align: center;
     color: white;
@@ -155,6 +156,12 @@ td {
     background: rgb(0, 113, 128);
 }
 
+.cash-out-message {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: fantasy;
+}
 .cash-out:hover {
     background: rgb(52, 143, 155);
     color: white;

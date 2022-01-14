@@ -4,7 +4,7 @@ var initialFunds = 2000;
 var walletAmount = initialFunds;
 var winningsAmount = 0;
 
-function displayWinner () {
+function displayWinner() {
     //If at least two numbers match in the TABLE, then
     // display this message
     let winnerMessage = document.querySelector(".winner-message")
@@ -12,7 +12,7 @@ function displayWinner () {
     setTimeout(() => {winnerMessage.innerHTML = ""}, 1000)
 }
 
-function displayKeepGoing () {
+function displayKeepGoing() {
    //If no numbers in the TABLE match, then
    // display this message
     let loserMessage = document.querySelector(".loser-message")
@@ -22,9 +22,16 @@ function displayKeepGoing () {
     )
 }
 
-// function displayInitialWalletAmount () {
-//     document.getElementById("wallet").innerHTML = initialFunds;
-// }
+function displayGameOverMessage() {
+   let gameOverMessage = document.querySelector(".cash-out-message") 
+    gameOverMessage.innerHTML = "$" + winningsAmount + " has been deposited! Thanks for playing Slot Machine!"
+    setTimeout(() => {gameOverMessage.innerHTML = "" }, 2000)
+}
+
+
+function displayInitialWalletAmount() {
+    document.getElementById("wallet").innerHTML = initialFunds;
+}
 
 function displayWalletAmount() {
         document.getElementById("wallet").innerHTML = "Wallet: $" + walletAmount;
@@ -109,18 +116,16 @@ function resetWalletAmountDisplay(){
     displayWalletAmount()
 }
 
-
 function cashOut() {
     //Reset entire game and display an alert with user's winnings
     displayHandlePullResults(0, 0, 0, 0)
     resetHandlePull()
     resetWalletAmountDisplay()
     resetWinningsDisplay()
-    alert("Money has been deposited! Thanks for playing!")
+    displayGameOverMessage()
 }
 
-
-function chooseDollarAmount () {
+function chooseDollarAmount() {
     var radioArrayAmounts = document.getElementsByName("money")
     for(i = 0; i < radioArrayAmounts.length; i++) {
         if(radioArrayAmounts[i].checked){
