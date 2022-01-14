@@ -1,10 +1,8 @@
-//var firstNum = Math.floor(Math.random()*5);
-//var secondNum = Math.floor(Math.random()*5);
+
 var handlePulls = 0
 var initialFunds = 2000;
 var walletAmount = initialFunds;
 var winningsAmount = 0;
-//var totalWinnings = 0
 
 function displayWinner () {
     //If at least two numbers match in the TABLE, then
@@ -24,31 +22,32 @@ function displayKeepGoing () {
     )
 }
 
-function displayInitialWalletAmount () {
-    document.getElementById("wallet").innerHTML = initialFunds;
-}
+// function displayInitialWalletAmount () {
+//     document.getElementById("wallet").innerHTML = initialFunds;
+// }
 
 function displayWalletAmount() {
-        document.getElementById("wallet").innerHTML = walletAmount;
+        document.getElementById("wallet").innerHTML = "Wallet: $" + walletAmount;
+        if (walletAmount < 1) {stopGame()}
 }
 
 function displayWinnings() {
+    // Upon loading, display the initial dollar amount the user will
+    // begin with to bet with (this would be the cash they would upload from their 
+    // bank account during signup, before playing)
     document.getElementById("winnings").innerHTML = "You've collected $" + winningsAmount   
 }
 
-// Upon load, display the initial dollar amount the user will
-// begin with to bet with (this would be the cash they upload from their 
-// bank account during signup before playing)
-
 function displayHandlePulls() {
-    document.getElementById("handlePullDisplay").innerHTML = handlePulls;
-}
-// Beginning with 0, display a number increasing in the amount
-// of one for each handle pull
+    // Beginning with 0, display a number increasing in the amount
+    // of one for each handle pull
+    document.getElementById("handlePullDisplay").innerHTML = "BETS: " + handlePulls;
 
-//https://www.w3resource.com/javascript-exercises/fundamental/javascript-fundamental-exercise-70.php#:~:text=Write%20a%20JavaScript%20program%20to%20count%20the%20occurrences,value%20is%20encountered%20inside%20the%20array.%20Sample%20Solution%3A
+}
+
 function countOccurrences(arr, val){ 
     return arr.reduce((a, v) => (v === val ? a + 1 : a), 0)
+    //https://www.w3resource.com/javascript-exercises/fundamental/javascript-fundamental-exercise-70.php#:~:text=Write%20a%20JavaScript%20program%20to%20count%20the%20occurrences,value%20is%20encountered%20inside%20the%20array.%20Sample%20Solution%3A
 }
 
 function compareNums (numArray,betAmount) {
@@ -68,10 +67,10 @@ function compareNums (numArray,betAmount) {
 }
 
 function pullHandle() {
-    var firstNum = Math.floor(Math.random() * 6);
-    var secondNum = Math.floor(Math.random() * 6);
-    var thirdNum = Math.floor(Math.random() * 6);
-    var fourthNum = Math.floor(Math.random() * 6);  
+    var firstNum = Math.floor(Math.random() * 5);
+    var secondNum = Math.floor(Math.random() * 5);
+    var thirdNum = Math.floor(Math.random() * 5);
+    var fourthNum = Math.floor(Math.random() * 5);  
     let numArray = [firstNum,secondNum,thirdNum,fourthNum]
     handlePulls = handlePulls + 1 
     displayHandlePullResults(firstNum, secondNum,thirdNum,fourthNum)
@@ -83,10 +82,6 @@ function pullHandle() {
     displayWalletAmount()
     displayWinnings()
     console.log(handlePulls)
- //- Randomize a sequence of 4 numbers and pass it to the function for the
-//results table. 
-//- Check for identical matches in the data set and return a trigger for 
-//the displayWinner function above 
 }
 
 function resetHandlePull() {
@@ -114,6 +109,7 @@ function resetWalletAmountDisplay(){
     displayWalletAmount()
 }
 
+
 function cashOut() {
     //Reset entire game and display an alert with user's winnings
     displayHandlePullResults(0, 0, 0, 0)
@@ -121,20 +117,24 @@ function cashOut() {
     resetWalletAmountDisplay()
     resetWinningsDisplay()
     alert("Money has been deposited! Thanks for playing!")
- }
+}
 
 
 function chooseDollarAmount () {
     var radioArrayAmounts = document.getElementsByName("money")
-        for(i = 0; i < radioArrayAmounts.length; i++) {
-             if(radioArrayAmounts[i].checked){
-              return radioArrayAmounts[i].value
-            }
+    for(i = 0; i < radioArrayAmounts.length; i++) {
+        if(radioArrayAmounts[i].checked){
+            return radioArrayAmounts[i].value
         }
+    }
     console.log()
+}
+function stopGame() {
+    cashOut()
 }
 
 function startGame() {
+    // start game upon browser initiation    
     displayHandlePullResults(0, 0, 0, 0)
     resetHandlePull()
     resetWalletAmountDisplay()
@@ -143,27 +143,3 @@ function startGame() {
 
 startGame()
 
-
-
-// Allow player to cash out at any point. At that point a function will check 
-// the numbers between the user bank and cash out windows
-// Reset button
-// Pull handle, cash out, reset, updating the display: wallet as a sub-function with no user interface. 
-// Wallet gets reset back to $100
-// Cash out get reset back to $0
-// User will decided how much to spend on each pull
-
-
-// User Pulls handle
-// Money leaves wallet - update display 
-// User puts in cash dollar amount, if they pull handle get at least  1, 2, 3's that is the factor by which the program will multiply
-// The product of the multiplication function will be added to the Cash Out
-
-// Radio Buttons
-// Select a radio button amount
-// To Do: Create wireframe front-end
-
-// Get the value from radio buttons
-// Return the value to the pullHandle
-// Figure out functions that return values
-// pull up an excel spreadsheet and find formulas for payouts
