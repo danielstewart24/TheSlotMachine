@@ -3,7 +3,10 @@
 # Numbers: SLOT MACHINE
 
 Sreenshots:
-https://github.com/danielstewart24/TheSlotMachine/blob/main/Web%20capture_14-1-2022_93941_danielstewart24.github.io.jpeg?raw=true
+
+![screenshot 1](https://github.com/danielstewart24/TheSlotMachine/blob/main/Web%20capture_14-1-2022_93941_danielstewart24.github.io.jpeg?raw=true)
+
+![screenshot 2](https://github.com/danielstewart24/TheSlotMachine/blob/main/Web%20capture_14-1-2022_94038_danielstewart24.github.io.jpeg?raw=true)
 
 This edition is slightly different than most Slot Machine games. 
 The idea behind this game is to explore a better winner opportunity for 
@@ -23,6 +26,8 @@ wallet and used to gamble at the table of digits. Once the user wins a round tha
 will be deposited into their winnings display below the table. User may Cash Out at any time
 and money will be "sent" to their linked bank. For your interest, the number of bets you've made
 for the game will be in the corner to the right of the of the board. 
+
+Good luck: https://danielstewart24.github.io/TheSlotMachine/
 
 ## Technologies Used
 
