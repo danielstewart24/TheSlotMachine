@@ -1,7 +1,7 @@
 //var firstNum = Math.floor(Math.random()*5);
 //var secondNum = Math.floor(Math.random()*5);
 var handlePulls = 0
-var initialFunds = 100;
+var initialFunds = 2000;
 var walletAmount = initialFunds;
 var winningsAmount = 0;
 //var totalWinnings = 0
@@ -33,8 +33,7 @@ function displayWalletAmount() {
 }
 
 function displayWinnings() {
-    document.getElementById("winnings").innerHTML = winningsAmount
-   
+    document.getElementById("winnings").innerHTML = "You've collected $" + winningsAmount   
 }
 
 // Upon load, display the initial dollar amount the user will
@@ -50,14 +49,13 @@ function displayHandlePulls() {
 //https://www.w3resource.com/javascript-exercises/fundamental/javascript-fundamental-exercise-70.php#:~:text=Write%20a%20JavaScript%20program%20to%20count%20the%20occurrences,value%20is%20encountered%20inside%20the%20array.%20Sample%20Solution%3A
 function countOccurrences(arr, val){ 
     return arr.reduce((a, v) => (v === val ? a + 1 : a), 0)
-
 }
-//[4,4,0,2]
+
 function compareNums (numArray,betAmount) {
   let winnings = 0
     numArray.map(
     (num) => {
-      if (countOccurrences(numArray, num) > 1) {
+      if (countOccurrences(numArray, num) > 2) {
         winnings =  betAmount * num 
         if (winnings > 0){
             displayWinner()    
@@ -70,10 +68,10 @@ function compareNums (numArray,betAmount) {
 }
 
 function pullHandle() {
-    var firstNum = Math.floor(Math.random() * 5);
-    var secondNum = Math.floor(Math.random() * 5);
-    var thirdNum = Math.floor(Math.random() * 5);
-    var fourthNum = Math.floor(Math.random() * 5);  
+    var firstNum = Math.floor(Math.random() * 6);
+    var secondNum = Math.floor(Math.random() * 6);
+    var thirdNum = Math.floor(Math.random() * 6);
+    var fourthNum = Math.floor(Math.random() * 6);  
     let numArray = [firstNum,secondNum,thirdNum,fourthNum]
     handlePulls = handlePulls + 1 
     displayHandlePullResults(firstNum, secondNum,thirdNum,fourthNum)
