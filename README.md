@@ -3,8 +3,7 @@
 # Numbers: SLOT MACHINE
 
 Sreenshots:
-
-
+https://github.com/danielstewart24/TheSlotMachine/blob/main/Web%20capture_14-1-2022_93941_danielstewart24.github.io.jpeg?raw=true
 
 This edition is slightly different than most Slot Machine games. 
 The idea behind this game is to explore a better winner opportunity for 
